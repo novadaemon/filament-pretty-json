@@ -3,6 +3,5 @@ pre.prettyjson {
     border: 1px solid silver;
     padding: 10px 20px;
     border-radius: 4px;
-    font-size: 10px;
     overflow: auto;
 }
