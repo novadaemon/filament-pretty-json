@@ -17,6 +17,7 @@ class FilamentPrettyJsonServiceProvider extends PluginServiceProvider
 
     public function configurePackage(Package $package): void
     {
-        $package->name('filament-pretty-json');
+        $package->name('filament-pretty-json')
+            ->hasViews();
     }
 }

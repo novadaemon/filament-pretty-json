@@ -1,6 +1,6 @@
 {
     "name": "novadaemon/filament-pretty-json",
-    "description": "Read-only field to show pretty json in your forms",
+    "description": "Read-only field to show pretty json in your filamentphp forms",
     "license": "MIT",
     "autoload": {
         "psr-4": {
