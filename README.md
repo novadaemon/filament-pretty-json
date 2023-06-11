@@ -51,7 +51,7 @@ Optionally, you can publish the views using
 php artisan vendor:publish --tag="filament-pretty-json-views"
 ```
 
-Also, yo can overwrite the css rules in your stylesheets.
+Also, you can overwrite the css rules in your stylesheets.
 
 ```css
 pre.prettyjson {
