@@ -1,9 +1,9 @@
-<x-dynamic-component :component="$getFieldWrapperView()" :id="$getId()" :label="$getLabel()" :label-sr-only="$isLabelHidden()" :helper-text="$getHelperText()"
-    :hint="$getHint()" :hint-action="$getHintAction()" :hint-color="$getHintColor()" :hint-icon="$getHintIcon()" :required="$isRequired()" :state-path="$getStatePath()">
+<x-dynamic-component :component="$getFieldWrapperView()" :field="$field">
     <div x-data="{
-        state: $wire.entangle('{{ $getStatePath() }}').defer,
+        state: $wire.entangle('{{ $getStatePath() }}'),
         get prettyJson() {
-            return window.prettyPrint(this.state)
+            json = JSON.parse(this.state)
+            return window.prettyPrint(json)
         }
     }">
         <pre class="prettyjson" x-html="prettyJson"></span>

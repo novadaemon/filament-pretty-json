@@ -14,10 +14,11 @@ class PrettyJson extends Field
 
         $this->afterStateHydrated(static function (PrettyJson $component, $state): void {
 
-            if(is_string($state)) {
-                $state = json_decode($state, true);
+            if(is_array($state)) {
+                $state = json_encode($state);
             }
             $component->state((array) $state);
+
         });
     }
 }

@@ -7,8 +7,15 @@
         "laravel",
         "forms",
         "field",
-        "json"
+        "json",
+        "novadaemon",
+        "filament-pretty-json"
     ],
+    "homepage": "https://github.com/novadaemon/filament-pretty-json",
+    "support": {
+        "issues": "https://github.com/novadaemon/filament-pretty-json/issues",
+        "source": "https://github.com/novadaemon/filament-pretty-json"
+    },
     "autoload": {
         "psr-4": {
             "Novadaemon\\FilamentPrettyJson\\": "src/"
@@ -20,12 +27,20 @@
             "email": "novadaemon@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "php": "^8.1|^8.2",
-        "spatie/laravel-package-tools": "^1.14.0",
-        "illuminate/contracts": "^10.0",
-        "filament/filament": "^2.0"
+        "filament/filament": "^3.0",
+        "filament/forms": "^3.0",
+        "spatie/laravel-package-tools": "^1.15.0",
+        "illuminate/contracts": "^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "nunomaduro/collision": "^7.9",
+        "phpstan/extension-installer": "^1.1"
+    },
+    "scripts": {
+        "format": "vendor/bin/pint"
     },
     "extra": {
         "laravel": {
@@ -33,5 +48,7 @@
                 "Novadaemon\\FilamentPrettyJson\\FilamentPrettyJsonServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

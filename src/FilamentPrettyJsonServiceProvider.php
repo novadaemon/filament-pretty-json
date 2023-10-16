@@ -2,22 +2,46 @@
 
 namespace Novadaemon\FilamentPrettyJson;
 
-use Filament\PluginServiceProvider;
+use Filament\Support\Assets\Js;
+use Filament\Support\Assets\Css;
 use Spatie\LaravelPackageTools\Package;
+use Filament\Support\Facades\FilamentAsset;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class FilamentPrettyJsonServiceProvider extends PluginServiceProvider
+class FilamentPrettyJsonServiceProvider extends PackageServiceProvider
 {
-    protected array $styles = [
-        'filament-pretty-json' => __DIR__.'/../resources/css/app.css',
-    ];
+    public static string $name = 'filament-pretty-json';
 
-    protected array $scripts = [
-        'filament-pretty-json' => __DIR__.'/../resources/js/app.js',
-    ];
+    public static string $viewNamespace = 'filament-pretty-json';
 
     public function configurePackage(Package $package): void
     {
-        $package->name('filament-pretty-json')
-            ->hasViews();
+        $package->name(static::$name)
+            ->hasViews(static::$viewNamespace);
+    }
+
+    public function packageBooted(): void
+    {
+        // Asset Registration
+        FilamentAsset::register(
+            $this->getAssets(),
+            $this->getAssetPackageName()
+        );
+    }
+
+    protected function getAssetPackageName(): ?string
+    {
+        return 'novadaemon/filament-pretty-json';
+    }
+
+    /**
+     * @return array<Asset>
+     */
+    protected function getAssets(): array
+    {
+        return [
+            Css::make('styles', __DIR__ . '/../resources/css/app.css'),
+            Js::make('scripts', __DIR__ . '/../resources/js/app.js'),
+        ];
     }
 }
