@@ -55,11 +55,33 @@ Also, you can overwrite the css rules in your stylesheets.
 
 ```css
 pre.prettyjson {
+    color: black;
     background-color: ghostwhite;
     border: 1px solid silver;
     padding: 10px 20px;
     border-radius: 4px;
     overflow: auto;
+}
+
+:is(.dark) pre.prettyjson {
+    opacity: .7;
+    --tw-bg-opacity: 1;
+    --tw-border-opacity: 1;
+    background-color: rgb(55 65 81/var(--tw-bg-opacity));
+    border: 1px solid rgb(75 85 99/var(--tw-border-opacity));
+    color: rgb(209 213 219/var(--tw-text-opacity));
+}
+
+:is(.dark) pre.prettyjson span.json-key {
+    color: red !important;
+}
+
+:is(.dark) pre.prettyjson span.json-string {
+    color: aquamarine !important;
+}
+
+:is(.dark) pre.prettyjson span.json-value {
+    color: deepskyblue !important;
 }
 ```
 
