@@ -75,5 +75,7 @@ Contributing is pretty chill and is highly appreciated! Just send a PR and/or cr
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-### Screenshot
-![Screeshot](screenshot.png)
+<div class="filament-hidden">
+    <h2>Screenshot</h2>
+    <img src="screenshot.png" alt="Screenshot"/>
+</div>
