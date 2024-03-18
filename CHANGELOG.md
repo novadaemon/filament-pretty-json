@@ -21,3 +21,7 @@ All notable changes to `filament-pretty-json` will be documented in this file.
 ## 2.0.0 
 
 - filament 3.0 support
+
+## 2.1.0
+
+- laravel 11 support

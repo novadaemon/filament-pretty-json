@@ -10,7 +10,7 @@ You can install the package via composer:
 composer require novadaemon/filament-pretty-json
 ```
 
-This package supports Laravel 9 and Laravel 10.
+This package supports Laravel 9, Laravel 10 and Laravel 11.
 
 ## Usage
 
