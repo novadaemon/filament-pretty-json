@@ -17,7 +17,7 @@ class PrettyJson extends Field
             if(is_array($state)) {
                 $state = json_encode($state);
             }
-            $component->state((array) $state);
+            $component->state($state);
 
         });
     }
