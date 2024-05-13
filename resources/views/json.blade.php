@@ -6,6 +6,6 @@
             return window.prettyPrint(this.state)
         }
     }">
-        <pre class="prettyjson" x-html="prettyJson"></span>
+        <pre class="prettyjson" x-html="prettyJson"></pre>
     </div>
 </x-dynamic-component>
