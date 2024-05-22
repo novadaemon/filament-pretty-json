@@ -31,7 +31,7 @@ class FileResource extends Resource
 }
 ```
 
-The value of the field can be an array or a json string
+The value of the field can be an array, object or a json string
 
 ```php
 /**
@@ -39,6 +39,8 @@ The value of the field can be an array or a json string
  */
 protected $casts = [
     'json' => 'array',
+    // OR
+    'json' => 'object',
 ];
 
 ```
