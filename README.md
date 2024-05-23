@@ -31,16 +31,15 @@ class FileResource extends Resource
 }
 ```
 
-The value of the field can be an array or a json string
+The value of the field can be casting to array, object, json, string, AsArrayObject or object that implements Jsonable interface
 
 ```php
 /**
  * @var string[]
  */
 protected $casts = [
-    'json' => 'array',
+    'card_info' => AsArrayObject::class
 ];
-
 ```
 
 ## Customize
