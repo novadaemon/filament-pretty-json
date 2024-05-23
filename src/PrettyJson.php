@@ -3,6 +3,9 @@
 namespace Novadaemon\FilamentPrettyJson;
 
 use Filament\Forms\Components\Field;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Database\Eloquent\Casts\AsArrayObject;
+use StdClass;
 
 class PrettyJson extends Field
 {
@@ -13,12 +16,17 @@ class PrettyJson extends Field
         parent::setUp();
 
         $this->afterStateHydrated(static function (PrettyJson $component, $state): void {
-
+            
             if(is_array($state)) {
                 $state = json_encode($state);
             }
-            $component->state($state);
 
+            if ($state instanceof Jsonable) {
+                $state = $state->toJson();
+            }
+
+            $component->state($state);
+            
         });
     }
 }
