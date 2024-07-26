@@ -10,7 +10,7 @@ You can install the package via composer:
 composer require novadaemon/filament-pretty-json
 ```
 
-This package supports Laravel 9, Laravel 10 and Laravel 11.
+This package supports Filament 2.x and 3.x.
 
 ## Usage
 
@@ -60,18 +60,18 @@ Also, you can overwrite the css rules in your stylesheets.
 ```css
 pre.prettyjson {
     color: black;
-    background-color: ghostwhite;
-    border: 1px solid silver;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 0.5rem;
     padding: 10px 20px;
-    border-radius: 4px;
     overflow: auto;
+    font-size: 12px;
 }
 
 :is(.dark) pre.prettyjson {
     opacity: .7;
     --tw-bg-opacity: 1;
     --tw-border-opacity: 1;
-    background-color: rgb(55 65 81/var(--tw-bg-opacity));
     border: 1px solid rgb(75 85 99/var(--tw-border-opacity));
     color: rgb(209 213 219/var(--tw-text-opacity));
 }
