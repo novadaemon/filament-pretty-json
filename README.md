@@ -2,6 +2,8 @@
 
 Read-only field to show pretty json in your [filamentphp](https://filamentphp.com/) forms.
 
+![Screenshot](https://raw.githubusercontent.com/novadaemon/filament-pretty-json/refs/heads/main/resources/img/screenshot.webp)
+
 ## Installation
 
 You can install the package via composer:
@@ -47,6 +49,19 @@ protected $casts = [
 ];
 ```
 
+## Allowing the value to be copied to the clipboard
+
+You may make the JSON copyable, such that clicking on the icon that appear in the top of the div when this option is enabled, the JSON value to the clipboard, and optionally specify a custom confirmation message and duration in milliseconds.
+
+```php
+PrettyJson::make('card_info')
+    ->copyable()
+    ->copyMessage('Your JSON is copied to the clipboard')
+    ->copyMessageDuration(1500)
+```
+
+![Copyable](https://raw.githubusercontent.com/novadaemon/filament-pretty-json/refs/heads/main/resources/img/copyable.webp)
+
 ## Customize
 
 Optionally, you can publish the views using
@@ -87,6 +102,30 @@ pre.prettyjson {
 :is(.dark) pre.prettyjson span.json-value {
     color: deepskyblue !important;
 }
+
+.copy-button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    color: rgb(156 163 175);
+    border: none;
+    outline: none;
+}
+
+.copy-button:hover {
+    color: rgb(75 85 99);
+}
+
+.copy-button:active, .copy-button:focus {
+    border: none;
+    outline: none;
+}
+
 ```
 
 ## Contributing
@@ -101,7 +140,3 @@ Contributing is pretty chill and is highly appreciated! Just send a PR and/or cr
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-<div class="filament-hidden">
-    <h2>Screenshot</h2>
-    <img src="screenshot.png" alt="Screenshot"/>
-</div>
