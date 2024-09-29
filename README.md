@@ -139,4 +139,3 @@ Contributing is pretty chill and is highly appreciated! Just send a PR and/or cr
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-

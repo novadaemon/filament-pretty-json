@@ -1,6 +1,6 @@
 @php
     $itemIsCopyable = $isCopyable($state);
-    $copyableState = $getCopyableState($state) ?? $state;
+    $copyableState = $getCopyableState($state);
     $copyMessage = $getCopyMessage($state);
     $copyMessageDuration = $getCopyMessageDuration($state);
 @endphp
@@ -13,7 +13,7 @@
             return window.prettyPrint(json)
         }
     }" class="min-w-0 flex-1 relative">
-        @if ($itemIsCopyable)
+        @if ($itemIsCopyable && $copyableState)
             <button type="button" class="copy-button"
                 x-on:click="window.navigator.clipboard.writeText(@js($copyableState))
                 $tooltip(@js($copyMessage), {

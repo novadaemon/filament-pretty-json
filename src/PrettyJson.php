@@ -32,13 +32,19 @@ class PrettyJson extends Field
                 $state = json_encode($state);
             }
 
+            if ($state === null || $state === '[]') {
+                $state = 'null';
+            }
+
             $component->state($state);
         });
 
     }
 
-    public function getCopyableState(): string
+    public function getCopyableState(): ?string
     {
-        return $this->getState();
+        $state = $this->getState();
+
+        return $state == 'null' ? null : $state;
     }
 }
