@@ -1,20 +1,20 @@
 <?php
 
-namespace Novadaemon\FilamentPrettyJson;
+namespace Novadaemon\FilamentPrettyJson\Form;
 
 use Closure;
 use StdClass;
 use Filament\Forms\Components\Field;
-use Filament\Support\Concerns\CanBeCopied;
 use Illuminate\Contracts\Support\Jsonable;
+use Novadaemon\FilamentPrettyJson\Trait\Copyable;
 
-class PrettyJson extends Field
+class PrettyJsonField extends Field
 {
-    use CanBeCopied;
+    use Copyable;
 
     protected bool | Closure $isDisabled = true;
 
-    protected string $view = 'filament-pretty-json::json';
+    protected string $view = 'filament-pretty-json::form.json';
 
     protected bool | Closure $isDehydrated = false;
 
@@ -22,7 +22,7 @@ class PrettyJson extends Field
     {
         parent::setUp();
 
-        $this->afterStateHydrated(static function (PrettyJson $component, $state): void {
+        $this->afterStateHydrated(static function (PrettyJsonField $component, $state): void {
 
             if ($state instanceof Jsonable) {
                 $state = $state->toJson();
@@ -39,12 +39,5 @@ class PrettyJson extends Field
             $component->state($state);
         });
 
-    }
-
-    public function getCopyableState(): ?string
-    {
-        $state = $this->getState();
-
-        return $state == 'null' ? null : $state;
     }
 }
