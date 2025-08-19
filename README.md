@@ -12,7 +12,7 @@ You can install the package via composer:
 composer require novadaemon/filament-pretty-json
 ```
 
-This package supports Filament 2.x and 3.x.
+This package supports Filament 2.x, 3.x and 4.x.
 
 ## Add to form
 
@@ -92,6 +92,12 @@ php artisan vendor:publish --tag="filament-pretty-json-views"
 Also, you can overwrite the css rules in your stylesheets.
 
 ```css
+.prettyjson-container {
+  position: relative;
+  min-width: 0;
+  flex: 1;
+}
+
 pre.prettyjson {
   color: black;
   background-color: rgba(0, 0, 0, 0);
@@ -134,6 +140,7 @@ pre.prettyjson {
   color: rgb(156 163 175);
   border: none;
   outline: none;
+  z-index: 50;
 }
 
 .copy-button:hover {

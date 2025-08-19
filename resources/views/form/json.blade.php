@@ -12,7 +12,7 @@
             json = JSON.parse(this.state != undefined ? this.state : '{}')
             return window.prettyPrint(json)
         }
-    }" class="min-w-0 flex-1 relative">
+    }" class="prettyjson-container">
         @if ($itemIsCopyable && $copyableState)
             <button type="button" class="copy-button"
                 x-on:click="window.navigator.clipboard.writeText(@js($copyableState))

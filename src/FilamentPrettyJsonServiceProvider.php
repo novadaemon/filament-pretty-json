@@ -12,12 +12,10 @@ class FilamentPrettyJsonServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'filament-pretty-json';
 
-    public static string $viewNamespace = 'filament-pretty-json';
-
     public function configurePackage(Package $package): void
     {
         $package->name(static::$name)
-            ->hasViews(static::$viewNamespace);
+            ->hasViews(static::$name);
     }
 
     public function packageBooted(): void
@@ -35,7 +33,7 @@ class FilamentPrettyJsonServiceProvider extends PackageServiceProvider
     }
 
     /**
-     * @return array<Asset>
+     * @return array<\Filament\Support\Assets\Asset>
      */
     protected function getAssets(): array
     {
