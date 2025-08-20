@@ -83,6 +83,19 @@ PrettyJsonEntry::make('card_info')
 
 ## Customize
 
+### Add extra attributes
+
+You can add additional attributes to the pre div using the **extraAttributes()** method.
+
+```php
+PrettyJsonField::make('card')
+->extraAttributes([
+  'style' => 'max-height: 200px;',
+]),
+```
+
+### Global customization
+
 Optionally, you can publish the views using
 
 ```bash
