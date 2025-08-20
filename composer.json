@@ -1,59 +1,59 @@
 {
-    "name": "novadaemon/filament-pretty-json",
-    "description": "Read-only field to show pretty json in your filamentphp forms",
-    "license": "MIT",
-    "keywords": [
-        "filament",
-        "laravel",
-        "forms",
-        "field",
-        "json",
-        "novadaemon",
-        "filament-pretty-json"
-    ],
-    "homepage": "https://github.com/novadaemon/filament-pretty-json",
-    "support": {
-        "issues": "https://github.com/novadaemon/filament-pretty-json/issues",
-        "source": "https://github.com/novadaemon/filament-pretty-json"
-    },
-    "autoload": {
-        "psr-4": {
-            "Novadaemon\\FilamentPrettyJson\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Jesús García",
-            "email": "novadaemon@gmail.com"
-        }
-    ],
-    "require": {
-        "php": "^8.1|^8.2",
-        "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "spatie/laravel-package-tools": "^1.15.0",
-        "illuminate/contracts": "^10.0|^11.0|^12.0"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.9|^8.1",
-        "phpstan/extension-installer": "^1.1"
-    },
-    "scripts": {
-        "format": "vendor/bin/pint"
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Novadaemon\\FilamentPrettyJson\\FilamentPrettyJsonServiceProvider"
-            ]
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "allow-plugins": {
-            "phpstan/extension-installer": true
-        }
+  "name": "novadaemon/filament-pretty-json",
+  "description": "Read-only field to show pretty json in your filamentphp forms",
+  "license": "MIT",
+  "keywords": [
+    "filament",
+    "laravel",
+    "forms",
+    "field",
+    "json",
+    "novadaemon",
+    "filament-pretty-json"
+  ],
+  "homepage": "https://github.com/novadaemon/filament-pretty-json",
+  "support": {
+    "issues": "https://github.com/novadaemon/filament-pretty-json/issues",
+    "source": "https://github.com/novadaemon/filament-pretty-json"
+  },
+  "autoload": {
+    "psr-4": {
+      "Novadaemon\\FilamentPrettyJson\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Jesús García",
+      "email": "novadaemon@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.1|^8.2",
+    "filament/filament": "^4.0",
+    "filament/forms": "^4.0",
+    "spatie/laravel-package-tools": "^1.9",
+    "illuminate/contracts": "^12.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "nunomaduro/collision": "^7.9|^8.1",
+    "phpstan/extension-installer": "^1.1"
+  },
+  "scripts": {
+    "format": "vendor/bin/pint"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Novadaemon\\FilamentPrettyJson\\FilamentPrettyJsonServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "phpstan/extension-installer": true
+    }
+  }
 }
