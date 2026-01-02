@@ -2,7 +2,6 @@
 
 namespace Novadaemon\FilamentPrettyJson\Form;
 
-use Closure;
 use StdClass;
 use Filament\Forms\Components\Field;
 use Illuminate\Contracts\Support\Jsonable;
@@ -12,15 +11,14 @@ class PrettyJsonField extends Field
 {
     use Copyable;
 
-    protected bool | Closure $isDisabled = true;
-
     protected string $view = 'filament-pretty-json::form.json';
-
-    protected bool | Closure $isDehydrated = false;
 
     protected function setUp(): void
     {
         parent::setUp();
+
+        $this->disabled();
+        $this->dehydrated(false);
 
         $this->afterStateHydrated(static function (PrettyJsonField $component, $state): void {
 
